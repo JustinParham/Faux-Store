@@ -1,0 +1,55 @@
+.displayCard {
+  box-shadow: 10px 10px rgb(56, 56, 56);
+  width: 100%;
+  background-color: white;
+  padding: 10px 10px 0 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  display: flex;
+}
+.displayCard:hover {
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+
+.itemTitle {
+  align-self: center;
+}
+
+.itemImage {
+  text-align: center;
+}
+
+.cartArea {
+  border: 1px solid rgb(65, 65, 65);
+  padding: 7px;
+  border-radius: 50%;
+  position: absolute;
+  width: fit-content;
+  right: 3;
+  bottom: 3;
+  color: black;
+  background-color: white;
+  user-select: none;
+}
+.cartArea:hover {
+  background-color: black;
+  color: white;
+}
+
+.priceAndCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.itemPrice {
+  align-self: flex-end;
+  margin: 0;
+}

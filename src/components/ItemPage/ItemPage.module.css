@@ -1,0 +1,44 @@
+.itemDiv {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.itemImage > img {
+  height: 400px;
+  width: 400px;
+}
+
+.itemImage {
+  text-align: center;
+}
+
+.descriptionArea {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.itemPrice {
+  font-size: 22;
+}
+
+.itemTitle {
+  font-size: 36;
+  justify-self: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.descriptionArea {
+  width: 500px;
+  background-color: rgb(110, 110, 110);
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.priceCartandQuantity {
+  display: flex;
+  justify-content: space-between;
+}

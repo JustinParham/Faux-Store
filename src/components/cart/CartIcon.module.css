@@ -1,0 +1,67 @@
+.cartArea {
+  position: fixed;
+  right: 20;
+  bottom: 10;
+  background-color: lightgray;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cartArea:hover {
+  border: 1px solid black;
+}
+
+.cartDisplayDiv {
+  visibility: hidden;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  right: -18;
+  bottom: 70;
+  height: fit-content;
+  width: 265%;
+  padding: 0;
+  border: darkgray 1px solid;
+}
+.cartWrapper:hover .cartDisplayDiv {
+  visibility: visible;
+}
+
+.cartWrapper:hover > .cartArea {
+  border: 1px solid black;
+}
+
+.cartIcon {
+  transform: scale(2);
+}
+
+.cartItemCount {
+  background-color: rgb(116, 116, 116);
+  padding: 8px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  right: 20;
+  bottom: 50;
+  z-index: 90;
+}
+
+.cartFunctionalityArea {
+  text-align: center;
+}
+
+.cartItemListArea {
+  list-style: none;
+  padding-left: 5px;
+  width: inherit;
+}
+
+.cartEmpty {
+  text-align: center;
+}

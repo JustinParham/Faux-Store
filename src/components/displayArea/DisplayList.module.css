@@ -1,0 +1,57 @@
+.sortingArea {
+  position: relative;
+  font-size: 20px;
+  width: fit-content;
+  background-color: white;
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.sortingArea:hover .searchOptionArea {
+  visibility: visible;
+}
+.sortingText {
+  display: inline;
+}
+
+.searchOptionArea {
+  border: black 1px solid;
+  width: fit-content;
+  padding: 5px 5px;
+  visibility: hidden;
+  position: absolute;
+  z-index: 20;
+  background-color: white;
+  opacity: 100%;
+  left: 60px;
+}
+
+.searchOption {
+  margin-top: 0px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  padding-top: 2px;
+}
+.searchOption:hover {
+  background-color: darkgrey;
+}
+
+.sortingCategoryText {
+  display: inline;
+  border-left: 2px solid black;
+  padding-left: 10px;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.itemDisplayArea {
+  padding-left: 10%;
+  width: 80%;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}

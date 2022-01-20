@@ -1,0 +1,7 @@
+.footerDiv {
+  height: 100px;
+  background-color: #5e5e5e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
