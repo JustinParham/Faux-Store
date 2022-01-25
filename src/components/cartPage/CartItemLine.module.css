@@ -1,0 +1,28 @@
+.itemImage {
+  height: 100px;
+  width: 100px;
+  border-radius: 25%;
+}
+
+.cartLineWrapper {
+  border-bottom: 1px dashed black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.quantityArea {
+  display: flex;
+}
+.quantityArea button {
+  height: 20px;
+}
+
+.quantityNumber {
+  padding: 0px 10px;
+}
+
+.itemTitle {
+  width: 35%;
+}

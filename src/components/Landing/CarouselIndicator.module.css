@@ -1,0 +1,15 @@
+.inactiveIndicator {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(119, 119, 119);
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.activeIndicator {
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 3px;
+}
