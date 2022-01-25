@@ -1,4 +1,55 @@
 .carouselArea {
-  background-color: lightpink;
-  height: 500px;
+  display: grid;
+  grid-template-columns: 5;
+  position: relative;
+}
+
+.carouselIndicatorArea {
+  display: flex;
+  background-color: whitesmoke;
+  width: fit-content;
+  padding: 3px 5px 3px 3px;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  transform: translateY(-10px);
+}
+
+.carouselArea button {
+  width: 30px;
+  border-radius: 50%;
+  opacity: 70%;
+}
+
+.carouselArea button:hover {
+  border: black 2px solid;
+  filter: brightness(85%);
+}
+
+.nextButton {
+  position: absolute;
+  left: 65%;
+  top: 50%;
+}
+
+.previousButton {
+  transform: scaleX(-1);
+  position: absolute;
+  left: 35%;
+  top: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .nextButton {
+    position: absolute;
+    left: 75%;
+    top: 50%;
+  }
+
+  .previousButton {
+    transform: scaleX(-1);
+    position: absolute;
+    left: 25%;
+    top: 50%;
+  }
 }

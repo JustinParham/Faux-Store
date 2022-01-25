@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Link } from 'react-router-dom';
+
 import classes from './MainHeader.module.css';
 
 export default function MainHeader() {
@@ -10,7 +10,7 @@ export default function MainHeader() {
       </a>
       <div className={classes.navigation}>
         <a href="/">Home</a>
-        <a href="/shop">Shop</a>
+        <a href="/cart">Cart</a>
       </div>
     </div>
   );

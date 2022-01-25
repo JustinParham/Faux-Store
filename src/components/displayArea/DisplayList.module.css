@@ -3,7 +3,7 @@
   font-size: 20px;
   width: fit-content;
   background-color: white;
-  border: 2px solid black;
+  border: 1px solid black;
   margin-top: 10px;
   margin-left: 5px;
 }
@@ -13,12 +13,13 @@
 }
 .sortingText {
   display: inline;
+  padding-left: 5px;
 }
 
 .searchOptionArea {
   border: black 1px solid;
   width: fit-content;
-  padding: 5px 5px;
+  padding: 5px 5px 5px 20px;
   visibility: hidden;
   position: absolute;
   z-index: 20;
@@ -39,7 +40,7 @@
 
 .sortingCategoryText {
   display: inline;
-  border-left: 2px solid black;
+  border-left: 1px solid black;
   padding-left: 10px;
   text-align: center;
   padding-right: 10px;

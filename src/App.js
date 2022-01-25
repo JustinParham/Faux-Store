@@ -8,6 +8,7 @@ import getAPICall from './dataManagement/getAPICall';
 import Footer from './components/footer/Footer';
 import CartIcon from './components/cart/CartIcon';
 import Featured from './components/Landing/Featured';
+import CartPage from './Pages/CartPage';
 
 export const ItemDataContext = createContext();
 
@@ -16,10 +17,24 @@ export default function App() {
   const [sortCategory, setSortCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const [itemCart, setItemCart] = useState([]);
+  const [featuredItems, setFeaturedItems] = useState([]);
 
   const fakeStoreURL = 'https://fakestoreapi.com/products';
 
   useEffect(() => {
+    const selectRandomItems = () => {
+      const randomNumberGetter = () => {
+        return 1 + Math.floor(Math.random() * 20);
+      };
+      const randomNumberSet = new Set();
+
+      while (randomNumberSet.size < 5) {
+        randomNumberSet.add(randomNumberGetter());
+      }
+
+      return Array.from(randomNumberSet);
+    };
+
     const cachedItemData =
       JSON.parse(localStorage.getItem('storeData')) || null;
 
@@ -39,6 +54,7 @@ export default function App() {
     if (cachedCartData) {
       setItemCart(cachedCartData);
     }
+    setFeaturedItems(selectRandomItems());
   }, []);
 
   const handleSortClick = e => {
@@ -52,7 +68,6 @@ export default function App() {
     const itemToAdd = itemList.filter(item => item.id === itemID)[0];
 
     if (updatedCart.includes(itemToAdd)) {
-      console.log(typeof quantity);
       const cartItem = updatedCart.find(item => {
         return item === itemToAdd;
       });
@@ -68,9 +83,37 @@ export default function App() {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  const clearCartHandler = cart => {
+  const updateQuantityHandler = (itemID, cart, mode) => {
+    const updatedCart = [...cart];
+    const cartItemToModify = updatedCart.find(
+      cartItem => cartItem.id === itemID
+    );
+    if (mode === 'addition') {
+      cartItemToModify.quantity++;
+    }
+    if (mode === 'subtraction') {
+      if (cartItemToModify.quantity === 1) {
+        removeItemFromCart(itemID, updatedCart);
+      } else {
+        cartItemToModify.quantity--;
+      }
+    }
+    setItemCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
+  const clearCartHandler = () => {
     localStorage.removeItem('cart');
     setItemCart([]);
+  };
+
+  const removeItemFromCart = (id, cart) => {
+    const updatedCart = cart.filter(item => {
+      return item.id !== id;
+    });
+
+    setItemCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
   return (
@@ -81,6 +124,9 @@ export default function App() {
           cart: itemCart,
           addToCart: addItemToCartHandler,
           clearCart: clearCartHandler,
+          featuredItems: featuredItems,
+          removeItemFromCart: removeItemFromCart,
+          updateQuantityHandler: updateQuantityHandler,
         }}
       >
         <Header />
@@ -102,6 +148,7 @@ export default function App() {
                 exact
               />
               <Route path="/item/:itemSlug" element={<ItemPage />} />
+              <Route path="/cart" element={<CartPage />} />
             </Routes>
           </BrowserRouter>
         </div>

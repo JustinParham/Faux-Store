@@ -2,11 +2,10 @@
   box-shadow: 10px 10px rgb(56, 56, 56);
   width: 100%;
   background-color: white;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   position: relative;
-  display: flex;
 }
 .displayCard:hover {
   background-color: rgb(65, 65, 65);
@@ -14,7 +13,7 @@
 }
 
 .itemTitle {
-  align-self: center;
+  text-align: center;
 }
 
 .itemImage {
@@ -22,7 +21,7 @@
 }
 
 .cartArea {
-  border: 1px solid rgb(65, 65, 65);
+  border: 2px solid rgb(53, 53, 53);
   padding: 7px;
   border-radius: 50%;
   position: absolute;
@@ -34,8 +33,9 @@
   user-select: none;
 }
 .cartArea:hover {
-  background-color: black;
+  background-color: rgb(131, 131, 131);
   color: white;
+  border-color: white;
 }
 
 .priceAndCart {
@@ -50,6 +50,8 @@ a {
 }
 
 .itemPrice {
-  align-self: flex-end;
-  margin: 0;
+  position: absolute;
+  bottom: 10;
+  left: 15;
+  font-weight: bold;
 }

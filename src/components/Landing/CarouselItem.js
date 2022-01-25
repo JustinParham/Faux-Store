@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './CarouselItem.module.css';
 
 export default function CarouselItem(props) {
-  console.log(props);
+  let activeOrInactive = 'inactive';
+  if (props.activeItemIndex === props.itemIndex) {
+    activeOrInactive = 'active';
+  }
+
   return (
-    <div>
-      <div className={classes.itemTitle}>{props.title}</div>
-      <div className={classes.itemImageWrapper}>
-        <img className={classes.itemImage} src={props.image}></img>
+    <div className={classes[`${activeOrInactive}`]}>
+      <div
+        className={classes.carouselItem}
+        style={{ backgroundImage: `url(${props.image})` }}
+      >
+        <div className={classes.itemTitle}>{props.title}</div>
       </div>
     </div>
   );

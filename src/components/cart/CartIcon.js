@@ -23,31 +23,35 @@ export default function CartIcon() {
   };
 
   return (
-    <div className={classes.cartWrapper}>
-      <div className={classes.cartItemCount}>
-        {cartItemCounter(globalContext.cart)}
-      </div>
-      <div className={classes.cartArea}>
-        <ShoppingCartOutlinedIcon className={classes.cartIcon} />
+    <a href="/cart">
+      <div className={classes.cartWrapper}>
+        <div className={classes.cartItemCount}>
+          {cartItemCounter(globalContext.cart)}
+        </div>
 
-        <div className={classes.cartDisplayDiv}>
-          <div>
-            <div className={classes.cartFunctionalityArea}>
-              <div>Total: ${calcCartTotal(globalContext.cart)}</div>
-              <button onClick={globalContext.clearCart}>Clear Cart</button>
+        <div className={classes.cartArea}>
+          <ShoppingCartOutlinedIcon className={classes.cartIcon} />
+          <a href="">
+            <div className={classes.cartDisplayDiv}>
+              <div>
+                <div className={classes.cartFunctionalityArea}>
+                  <div>Total: ${calcCartTotal(globalContext.cart)}</div>
+                  <button onClick={globalContext.clearCart}>Clear Cart</button>
+                </div>
+                <ul className={classes.cartItemListArea}>
+                  {globalContext.cart.length > 0 &&
+                    globalContext.cart.map(item => {
+                      return <CartDisplay key={item.id} {...item} />;
+                    })}
+                  {globalContext.cart.length === 0 && (
+                    <div className={classes.cartEmpty}>Cart Empty</div>
+                  )}
+                </ul>
+              </div>
             </div>
-            <ul className={classes.cartItemListArea}>
-              {globalContext.cart.length > 0 &&
-                globalContext.cart.map(item => {
-                  return <CartDisplay key={item.id} {...item} />;
-                })}
-              {globalContext.cart.length === 0 && (
-                <div className={classes.cartEmpty}>Cart Empty</div>
-              )}
-            </ul>
-          </div>
+          </a>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
