@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: 0px;
 }
 
 .cartArea:hover {
@@ -20,20 +21,20 @@
 .cartDisplayDiv {
   visibility: hidden;
   background-color: rgb(255, 255, 255);
-  position: absolute;
-  right: -18;
-  bottom: 70;
+  position: fixed;
+  right: 10;
+  bottom: 90px;
   height: fit-content;
-  width: 265%;
+  width: 20%;
   padding: 0;
   border: darkgray 1px solid;
 }
-.cartWrapper:hover .cartDisplayDiv {
+.cartItemCount:hover .cartDisplayDiv {
   visibility: visible;
 }
 
-.cartWrapper:hover > .cartArea {
-  border: 1px solid black;
+.cartWrapper:hover > .cartDisplayDiv {
+  visibility: visible;
 }
 
 .cartIcon {
@@ -64,4 +65,19 @@
 
 .cartEmpty {
   text-align: center;
+}
+
+.cartWrapper {
+  background-color: thistle;
+}
+
+.clearCartButton {
+  border-radius: 30px;
+  border: 1px solid black;
+  box-shadow: 2px 2px gray;
+}
+.clearCartButton:hover {
+  border: 1px solid white;
+  background-color: rgb(107, 107, 107);
+  color: white;
 }

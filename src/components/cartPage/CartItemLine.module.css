@@ -17,6 +17,15 @@
 }
 .quantityArea button {
   height: 20px;
+  border-radius: 25%;
+  border: 1px solid black;
+  box-shadow: 2px 2px gray;
+}
+
+.quantityArea button:hover {
+  border: 1px solid white;
+  background-color: rgb(107, 107, 107);
+  color: white;
 }
 
 .quantityNumber {
@@ -25,4 +34,26 @@
 
 .itemTitle {
   width: 35%;
+  font-size: 18;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.removeButton {
+  border-radius: 30px;
+  border: 1px solid black;
+  box-shadow: 2px 2px gray;
+}
+
+.removeButton:hover {
+  border: 1px solid white;
+  background-color: rgb(107, 107, 107);
+  color: white;
+}
+
+.lineTotal {
+  font-size: 18;
+  min-width: fit-content;
+  width: 10%;
 }

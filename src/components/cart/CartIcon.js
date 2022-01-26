@@ -23,35 +23,40 @@ export default function CartIcon() {
   };
 
   return (
-    <a href="/cart">
-      <div className={classes.cartWrapper}>
-        <div className={classes.cartItemCount}>
-          {cartItemCounter(globalContext.cart)}
-        </div>
+    <div className={classes.cartWrapper}>
+      <a href="/cart">
+        <div className={classes.cartIconWrapper}>
+          <div className={classes.cartItemCount}>
+            {cartItemCounter(globalContext.cart)}
+          </div>
 
-        <div className={classes.cartArea}>
-          <ShoppingCartOutlinedIcon className={classes.cartIcon} />
-          <a href="">
-            <div className={classes.cartDisplayDiv}>
-              <div>
-                <div className={classes.cartFunctionalityArea}>
-                  <div>Total: ${calcCartTotal(globalContext.cart)}</div>
-                  <button onClick={globalContext.clearCart}>Clear Cart</button>
-                </div>
-                <ul className={classes.cartItemListArea}>
-                  {globalContext.cart.length > 0 &&
-                    globalContext.cart.map(item => {
-                      return <CartDisplay key={item.id} {...item} />;
-                    })}
-                  {globalContext.cart.length === 0 && (
-                    <div className={classes.cartEmpty}>Cart Empty</div>
-                  )}
-                </ul>
-              </div>
-            </div>
-          </a>
+          <button className={classes.cartArea} onClick="location.href='/cart'">
+            <ShoppingCartOutlinedIcon className={classes.cartIcon} />
+          </button>
+        </div>
+      </a>
+      <div className={classes.cartDisplayDiv}>
+        <div>
+          <div className={classes.cartFunctionalityArea}>
+            <div>Total: ${calcCartTotal(globalContext.cart)}</div>
+            <button
+              className={classes.clearCartButton}
+              onClick={globalContext.clearCart}
+            >
+              Clear Cart
+            </button>
+          </div>
+          <ul className={classes.cartItemListArea}>
+            {globalContext.cart.length > 0 &&
+              globalContext.cart.map(item => {
+                return <CartDisplay key={item.id} {...item} />;
+              })}
+            {globalContext.cart.length === 0 && (
+              <div className={classes.cartEmpty}>Cart Empty</div>
+            )}
+          </ul>
         </div>
       </div>
-    </a>
+    </div>
   );
 }

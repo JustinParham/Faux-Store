@@ -41,6 +41,7 @@ export default function ItemPage() {
   };
 
   const selectorChangeHandler = e => {
+    console.log(parseInt(e.target.value));
     setItemQuantity(parseInt(e.target.value));
   };
 

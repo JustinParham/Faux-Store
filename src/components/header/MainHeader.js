@@ -11,6 +11,7 @@ export default function MainHeader() {
       <div className={classes.navigation}>
         <a href="/">Home</a>
         <a href="/cart">Cart</a>
+        <a href="/info">Info</a>
       </div>
     </div>
   );

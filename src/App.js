@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import CartIcon from './components/cart/CartIcon';
 import Featured from './components/Landing/Featured';
 import CartPage from './Pages/CartPage';
+import InfoPage from './Pages/InfoPage';
 
 export const ItemDataContext = createContext();
 
@@ -67,9 +68,9 @@ export default function App() {
     const updatedCart = [...cart];
     const itemToAdd = itemList.filter(item => item.id === itemID)[0];
 
-    if (updatedCart.includes(itemToAdd)) {
+    if (updatedCart.find(item => item.id === itemToAdd.id)) {
       const cartItem = updatedCart.find(item => {
-        return item === itemToAdd;
+        return item.id === itemToAdd.id;
       });
 
       cartItem.quantity = cartItem.quantity + quantity;
@@ -149,6 +150,7 @@ export default function App() {
               />
               <Route path="/item/:itemSlug" element={<ItemPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/info" element={<InfoPage />} />
             </Routes>
           </BrowserRouter>
         </div>

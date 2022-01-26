@@ -37,8 +37,15 @@ export default function CartItemLine(props) {
         <div className={classes.quantityNumber}>{props.quantity}</div>
         <button onClick={addOrRemoveQuantityHandler}>+</button>
       </div>
-      <div>${Math.round(props.price * props.quantity * 100) / 100}</div>
-      <button onClick={removeButtonClickHandler}>Remove</button>
+      <div className={classes.lineTotal}>
+        ${Math.round(props.price * props.quantity * 100) / 100}
+      </div>
+      <button
+        className={classes.removeButton}
+        onClick={removeButtonClickHandler}
+      >
+        Remove
+      </button>
     </div>
   );
 }
