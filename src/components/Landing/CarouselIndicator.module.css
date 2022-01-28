@@ -4,6 +4,7 @@
   background-color: rgb(119, 119, 119);
   border-radius: 50%;
   margin-left: 3px;
+  cursor: pointer;
 }
 
 .activeIndicator {

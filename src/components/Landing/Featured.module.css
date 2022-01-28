@@ -30,6 +30,7 @@
   position: absolute;
   left: 65%;
   top: 50%;
+  cursor: pointer;
 }
 
 .previousButton {
@@ -37,6 +38,7 @@
   position: absolute;
   left: 35%;
   top: 50%;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

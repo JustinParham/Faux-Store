@@ -30,7 +30,7 @@ export default function CartIcon() {
             {cartItemCounter(globalContext.cart)}
           </div>
 
-          <button className={classes.cartArea} onClick="location.href='/cart'">
+          <button className={classes.cartArea}>
             <ShoppingCartOutlinedIcon className={classes.cartIcon} />
           </button>
         </div>

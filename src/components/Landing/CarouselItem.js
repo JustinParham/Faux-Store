@@ -15,6 +15,9 @@ export default function CarouselItem(props) {
       >
         <div className={classes.itemTitle}>{props.title}</div>
       </div>
+      <a className={classes.carouselItemLink} href={`/item/${props.id}`}>
+        <span></span>
+      </a>
     </div>
   );
 }
